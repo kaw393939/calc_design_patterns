@@ -1,7 +1,5 @@
 # main.py
-from app import App
-def main():
-    app = App.create()
+from app import App    
 
 if __name__ == "__main__":
-    main()
+    App.start()

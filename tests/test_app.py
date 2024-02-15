@@ -1,9 +1,9 @@
 """Hello World of App Example Test File"""
 from app import App
 
-def test_app():
-    """Creation of an App Instance"""
-    app = App.create()
+def test_app_start(capfd):
+    """Hello World Prints When Main starts"""
 
-    # Check if `app` is an instance of `App`
-    assert isinstance(app, App)
+    App.start()
+    out, err = capfd.readouterr() # pylint: disable=unused-variable
+    assert out == "Hello World\n"

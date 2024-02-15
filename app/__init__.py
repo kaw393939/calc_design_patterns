@@ -1,7 +1,6 @@
 class App():
-    def __init__(self) -> None:
+    
+    @staticmethod
+    def start() -> None:
         print("Hello World")
-
-    @classmethod
-    def create(cls):
-        return cls()
+        
