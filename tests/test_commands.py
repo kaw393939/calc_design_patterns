@@ -1,6 +1,6 @@
 import pytest
 from app import App
-from app.commands import GreetCommand  # Adjust the import according to your project structure
+from app.commands.greet import GreetCommand
 
 def test_greet_command(capfd):
     command = GreetCommand()
