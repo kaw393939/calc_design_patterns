@@ -5,10 +5,6 @@ class Command(ABC):
     def execute(self):
         pass
 
-class GreetCommand(Command):
-    def execute(self):
-        print("Hello, World!")
-
 class CommandHandler:
     def __init__(self):
         self.commands = {}
