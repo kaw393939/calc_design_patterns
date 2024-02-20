@@ -12,11 +12,17 @@ class App:
     def start(self):
         self.command_handler.register_command("greet", GreetCommand())
         self.command_handler.register_command("goodbye", GoodbyeCommand())
-        self.command_handler.register_command("exit", ExitCommand())
+        self.command_handler.register_command("hello", GreetCommand())
 
         print("Type 'exit' to exit.")
-        while True:  #REPL Read, Evaluate, Process, Loop
-            self.command_handler.execute_command(input(">>> ").strip())
+        while True:
+            user_input = input(">>> ").strip().split()
+            if user_input[0].lower() == "exit":
+                print("Exiting...")
+                break
+            command_name = user_input[0]
+            command_args = user_input[1:]
+            self.command_handler.execute_command(command_name, *command_args)
 
 
 
