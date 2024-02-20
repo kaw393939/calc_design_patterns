@@ -13,9 +13,9 @@ class CommandHandler:
         self.commands[command_name] = command_factory
 
     @staticmethod
-    def create_command(Command):
+    def create_command(Command, **init_args):
         def command_factory(**kwargs):
-            return Command(**kwargs)
+            return Command(**init_args, **kwargs)
         return command_factory
 
     def execute_command(self, user_input):
