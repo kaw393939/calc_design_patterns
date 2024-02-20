@@ -1,7 +1,9 @@
 import pytest
 from app import App
+from app.commands import CommandHandler
 from app.commands.goodbye import GoodbyeCommand
 from app.commands.greet import GreetCommand
+from app.commands.help import HelpCommand
 
 def test_greet_command(capfd):
     command = GreetCommand()
@@ -14,9 +16,6 @@ def test_goodbye_command(capfd):
     command.execute()
     out, err = capfd.readouterr()
     assert out == "Goodbye\n", "The GreetCommand should print 'Hello, World!'"
-
-
-import pytest
 
 def test_app_greet_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command."""
@@ -31,3 +30,18 @@ def test_app_greet_command(capfd, monkeypatch):
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
 
+from app.commands.help import HelpCommand
+
+def test_help_command_output(capfd):
+    # Create a CommandHandler instance and register some sample commands including the HelpCommand
+    command_handler = CommandHandler()
+    command_handler.register_command("help", HelpCommand(command_handler))
+    command_handler.register_command("greet", GreetCommand())
+    # Execute the HelpCommand
+    help_command = HelpCommand(command_handler)
+    help_command.execute()
+    # Capture and evaluate the output
+    out, err = capfd.readouterr()
+    assert "Available commands:" in out
+    assert "- help" in out
+    assert "- greet" in out
