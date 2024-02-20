@@ -8,15 +8,18 @@ class App:
         # Register commands here
         self.command_handler.register_command("greet", GreetCommand())
         self.command_handler.register_command("goodbye", GoodbyeCommand())
+        self.command_handler.register_command("hello", GreetCommand())
 
     def start(self):
         print("Type 'exit' to exit.")
         while True:
-            user_input = input(">>> ").strip()
-            if user_input.lower() == "exit":
+            user_input = input(">>> ").strip().split()
+            if user_input[0].lower() == "exit":
                 print("Exiting...")
                 break
-            self.command_handler.execute_command(user_input)
+            command_name = user_input[0]
+            command_args = user_input[1:]
+            self.command_handler.execute_command(command_name, *command_args)
 
 
 
