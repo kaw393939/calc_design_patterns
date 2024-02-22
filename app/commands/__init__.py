@@ -15,11 +15,20 @@ class CommandHandler:
     def execute_command(self, input_str):
         parts = input_str.split()
         command_name = parts[0]
-        args = parts[1:]  # Remaining parts are arguments
+        args = []
+        kwargs = {}
+
+        # Separate args and kwargs
+        for part in parts[1:]:
+            if '=' in part:
+                key, value = part.split('=', 1)
+                kwargs[key] = value
+            else:
+                args.append(part)
 
         if command_name in self.commands:
             command = self.commands[command_name]
-            command.execute(*args)  # Pass arguments as *args
+            command.execute(*args, **kwargs)
         else:
             print(f"Unknown command: {command_name}")
 
