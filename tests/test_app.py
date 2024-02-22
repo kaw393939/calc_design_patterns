@@ -31,3 +31,14 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     # Verify that the unknown command was handled as expected
     captured = capfd.readouterr()
     assert "No such command: unknown_command" in captured.out
+
+
+# Additional test for handling commands with arguments
+def test_app_greet_command_with_args(capfd, monkeypatch):
+    """Test that the REPL handles the 'greet' command with arguments."""
+    inputs = iter(["greet John", "exit"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    App.start()
+    out, err = capfd.readouterr()
+    assert "Hello, John!" in out
+    assert "Exiting..." in out
