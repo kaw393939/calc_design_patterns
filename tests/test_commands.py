@@ -30,4 +30,3 @@ def test_app_greet_command(capfd, monkeypatch):
     
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
-
