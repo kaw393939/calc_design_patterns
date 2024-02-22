@@ -12,8 +12,6 @@ def test_app_start_exit_command(capfd, monkeypatch):
 
 
 
-import pytest
-
 def test_app_start_unknown_command(capfd, monkeypatch):
     """Test how the REPL handles an unknown command before exiting."""
     # Simulate user entering an unknown command followed by 'exit'
@@ -21,13 +19,10 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     app = App()
-    
     with pytest.raises(SystemExit) as excinfo:
         app.start()
-    
     # Optionally, check for specific exit code or message
     # assert excinfo.value.code == expected_exit_code
-    
     # Verify that the unknown command was handled as expected
     captured = capfd.readouterr()
     assert "No such command: unknown_command" in captured.out
