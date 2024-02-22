@@ -20,4 +20,12 @@ class RemoveSpace(Command):
             print(f"The sentence after removing spaces is: {sentence_without_spaces}")
         except Exception as e:
             print(f"Error: {e}")
-        
+
+class NextLine(Command):
+    def execute(self, *args):
+        try:
+            sentence = ' '.join(args)
+            sentence_with_next_line = sentence.replace(' ', '\n')
+            print(f"The sentence with next line char is :\n {sentence_with_next_line}")
+        except Exception as e:
+            print(f"Error: {e}")

@@ -2,7 +2,7 @@ from app.commands import CommandHandler
 from app.commands.exit import ExitCommand
 from app.commands.goodbye import GoodbyeCommand
 from app.commands.greet import GreetCommand
-from app.commands.operations import SplitWord, RemoveSpace
+from app.commands.operations import SplitWord, RemoveSpace, NextLine
 
 class App:
     def __init__(self): # Constructor
@@ -14,6 +14,7 @@ class App:
         # Register the SplitWord command
         self.command_handler.register_command("split", SplitWord())
         self.command_handler.register_command("spaceRemover", RemoveSpace())
+        self.command_handler.register_command("nextLine", NextLine())
 
     def start(self):
         print("Type 'exit' to exit.")
