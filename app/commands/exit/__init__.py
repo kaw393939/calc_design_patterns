@@ -3,5 +3,5 @@ from app.commands import Command
 
 
 class ExitCommand(Command):
-    def execute(self):
+    def execute(self, *args, **kwargs):
         sys.exit("Exiting...")
