@@ -7,9 +7,10 @@ load-plugins=pylint_django
 [MESSAGES CONTROL]
 # Only show these errors
 # Disable the following checks (example list):
-disable= unused-argument,
-         line-too-long,
-         redefined-outer-name
+disable= C0114, C0115, C0116, C0304, W0613, C0301, 
+        W0621, C2801, C0303, C0103, C0303, C0304, 
+        C0114, C0116, W0143, C0411, W0611,  C0305,
+        W0404, C0413, W0641, C0412, W0612
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html

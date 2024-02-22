@@ -16,7 +16,7 @@ class App:
 
         print("Type 'exit' to exit.")
         while True:  #REPL Read, Evaluate, Process, Loop
-            self.command_handler.execute_command(input(">>> ").strip())
-
-
-
+            user_input = input(">>> ").strip().split()  # Split input into list of arguments
+            command_name = user_input[0]
+            args = user_input[1:]  # Remaining arguments after command name
+            self.command_handler.execute_command(command_name, *args)
