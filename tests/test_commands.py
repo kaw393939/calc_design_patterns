@@ -3,20 +3,17 @@ from app import App
 from app.commands.goodbye import GoodbyeCommand
 from app.commands.greet import GreetCommand
 
-def test_greet_command(capfd):
+def test_greet_command_with_kwargs(capfd):
     command = GreetCommand()
-    command.execute()
+    command.execute(name="DJ", greeting="Greetings")
     out, err = capfd.readouterr()
-    assert out == "Hello, World!\n", "The GreetCommand should print 'Hello, World!'"
+    assert out.strip() == "Greetings, DJ!"
 
-def test_goodbye_command(capfd):
+def test_goodbye_command_with_kwargs(capfd):
     command = GoodbyeCommand()
-    command.execute()
+    command.execute(world="World", bye="Goodbye")
     out, err = capfd.readouterr()
-    assert out == "Goodbye\n", "The GreetCommand should print 'Hello, World!'"
-
-
-import pytest
+    assert out.strip() == "Goodbye, World!"
 
 def test_app_greet_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command."""
