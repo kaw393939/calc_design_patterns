@@ -1,4 +1,21 @@
-# Project Starter
+# Project Command Pattern and Plugins
+
+In this project, you will be learning a few differencing concepts:
+
+1. Read, Evaluate, Print, Loop (REPL)
+2. The object oriented design pattern: Command
+
+### Command Assignment Readings
+* https://refactoring.guru/design-patterns/command
+
+### Command Pattern Lecture - Instructor Required - [here](https://youtu.be/3DVUN091T5g)
+
+3. Knowing when to use If statements and Exceptions by following Easier to ask for forgiveness than permission(EAFP), or Look Before You Leap LBYL.
+
+4. Adding Plugins with Using ChatGPT - Gets rid of the manual loading of commands
+
+### Plugins Lecture - Instructor Required - [here](https://youtu.be/c2PmjazGW2w)
+
 
 ## Setup Instructions
 1. Clone the repo
@@ -17,6 +34,7 @@
 2. [Faker - Fake Data Creation](https://faker.readthedocs.io/en/master/)
 3. [Pytest Coverage](https://pytest-cov.readthedocs.io/en/latest/readme.html)
 4. [Pytest Pylint](https://pylint.readthedocs.io/en/stable/development_guide/contributor_guide/tests/launching_test.html)
+
 ## Adding Library
 1.  Make sure you are in the correct VE, if not sure run "deactivate"
 2.  Activate the VE
