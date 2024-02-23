@@ -4,6 +4,7 @@ from app.commands.exit import ExitCommand
 from app.commands.goodbye import GoodbyeCommand
 from app.commands.greet import GreetCommand
 from app.commands.menu import MenuCommand
+from app.commands.calendar import CalendarCommand
 
 class App:
     def __init__(self): # Constructor
