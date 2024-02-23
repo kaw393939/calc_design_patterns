@@ -1,4 +1,26 @@
+<<<<<<< Updated upstream
 # Project Starter
+=======
+# Project Command Pattern and Plugins
+
+In this assignment, you will be learning a few different concepts:
+
+###  Read, Evaluate, Print, Loop (REPL) (main Branch) - Keeping an app running 
+*  The Command object oriented design pattern - Making your app do more than one thing.
+
+### Command Assignment Readings
+* https://refactoring.guru/design-patterns/command
+
+### Command Pattern Lecture (Command Branch) - Instructor Required - [here](https://youtu.be/3DVUN091T5g)
+
+* Knowing when to use If statements and Exceptions by following Easier to ask for forgiveness than permission(EAFP), or Look Before You Leap LBYL.
+
+* Adding Plugins with Using ChatGPT - Gets rid of the manual loading of commands
+
+### Plugins Lecture (Plugins Branch) - Instructor Required - [here](https://youtu.be/c2PmjazGW2w)
+
+
+>>>>>>> Stashed changes
 
 ## Setup Instructions
 1. Clone the repo
