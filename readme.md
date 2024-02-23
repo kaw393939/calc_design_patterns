@@ -25,6 +25,17 @@ Incorporate the functionalities discussed in the lecture videos to your previous
 5. **(Bonus) Explore Multiprocessing Capabilities:**
    - Investigate adding multiprocessing features to enable commands/plugins to run on separate cores. This enhancement is a forward-looking feature that prepares your application for future scalability and performance improvements.
 
+## Grading Rubric (Total: 100 Points)
+
+- **Testing (50 Points):**
+  - Comprehensive test coverage near 100% average coverage: 50 Points
+
+- **Functionality (50 Points):**
+  - Implementation of command pattern and REPL: 10 Points
+  - Interactive calculator commands (add, subtract, multiply, divide): 20 Points
+  - Successful plugin architecture integration for dynamic command loading: 20 
+Ensure that the functionality aligns with the requirements and demonstrates the effective use of the command pattern and plugin architecture as outlined in the instructor videos.
+
 ## Recommended Viewing
 
 To complement the project work, the following videos are highly recommended:
@@ -61,13 +72,3 @@ To complement the project work, the following videos are highly recommended:
 2. Activate the VE.
 3. Update the requirements file with `pip freeze > requirements.txt`.
 
-## Grading Rubric (Total: 100 Points)
-
-- **Testing (50 Points):**
-  - Comprehensive test coverage near 100% average coverage: 50 Points
-
-- **Functionality (50 Points):**
-  - Implementation of command pattern and REPL: 10 Points
-  - Interactive calculator commands (add, subtract, multiply, divide): 20 Points
-  - Successful plugin architecture integration for dynamic command loading: 20 
-Ensure that the functionality aligns with the requirements and demonstrates the effective use of the command pattern and plugin architecture as outlined in the instructor videos.
