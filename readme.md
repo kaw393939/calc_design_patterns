@@ -1,62 +1,73 @@
-# Project Command Pattern and Plugins
+# Project: Command Pattern and Plugins Homework 5
 
-In this assignment, you will be learning how to make an interactive command line application that runs as an application and not a "script" that just executes once.  We will learn to use the command pattern and how to automaticly load commands using a simple plugin architecutre.  In addition, you will learn when to use exceptions through try catch or to use an if statment to guard your program from bad data. This unit is important because it starts to take our program from a simple script to an actual application and it begins to provide some structure, so that we can add new functionality.  This code is going to get you ready for the mid-term project, which will have a short time deadline and require both code and a paper that explains your programs architecure, design patterns, and functionality in some detail.  
+## Introduction
 
- **You add this functionality to your previous assignment 4 - This is repo only covering the features in the lecture videos**
+This project focuses on the development of an interactive command-line application that operates continuously, transitioning from a single-execution script to a fully functional application. Through this assignment, you will explore the command pattern, learn how to dynamically load commands using a simple plugin architecture, and understand the appropriate use of exceptions versus conditional statements to manage invalid data inputs. This unit lays the foundational skills for application development, preparing you for the midterm project, which requires a thorough explanation of your program's architecture, design patterns, and functionality.
 
-# Submission Requirements
+## Project Enhancements from Assignment 4
 
-1.  First watch the lecture and try out my code for the command main/command branch that is covered in the first lecture.  Make sure you understand how REPL and the command pattern works.  Add this to your previous program and make your calculator program interactive so that you have 4 commands: add, subtract, multiply, and divide.  
+Incorporate the functionalities discussed in the lecture videos to your previous assignment. This includes transforming your calculator program into an interactive application using the command pattern and REPL (Read, Evaluate, Print, Loop) principles.
 
-2.  (Bonus) - Try to make a menu command that lists the commands in the commands dictionary.  You would want to list the available commands, when the program starts and whenever the user types "menu".  I don't show you how to do this, but it will really help you understand and you will be required to do this in the next assignment.     
+### Submission Requirements
 
-3.  Once you feel comfortable understanding how your program works and you have your calculator functions working as commands, you will need to update your tests and try to get to 100% test coverage.
+1. **Initial Setup:**
+   - Watch the lecture on the main/command branch, which covers REPL and the command pattern. [Instructor Video: Command Pattern Lecture](https://youtu.be/3DVUN091T5g). Integrate these concepts with your existing program to add four basic commands: add, subtract, multiply, and divide, making your calculator interactive.
 
-4.  Once you get your program working interactivly and have covered it with tests the next step is to watch the lecture on plugins and you will learn how to quickly refactor your program to make it automaticly load plugins, so you don't have to manually add commands to your program.  In the future, you will just put a new command/plugin folder with a dunder init.py file inside the app/plugins folder and it will automaticly be made available as a command in the application.
+2. **(Bonus) Implement a Menu Command:**
+   - Create a menu command that displays available commands from the command dictionary at the application's start and when the user types "menu." This is a self-guided challenge to deepen your understanding of dynamic command integration.
 
-5. (Bonus) - Get ahead of the curve for next week and ask ChatGPT about adding multiprocessor capabilities, so that your commands / plugins run on their own core.  If you ask ChatGPT like I do at the end of the 2nd video, you will see that its a relativly minor change that will be useful in the future.  Eventually, we will enable asynchronous operations, where you will be able to run multiple commands simultaneously.  Normally, a program runs on one core/thread and it has to run synchronously, which means it can't do anything else while its running a part of your program.  Asyncrounous operation will allow us to run multiple commands at once like how you may download multiple files at one time in a program.  As we go through the course, we will identify challenges and solutions to improve the performance by managing memory usage and taking advantage of a computers available cpu resources. 
+3. **Testing and Code Coverage:**
+   - With the calculator commands integrated, update and expand your tests to achieve 100% test coverage, ensuring your program's functionality is fully verified.
 
-## Highly Recommended Videos to Watch - I would Watch Them
+4. **Plugin Architecture:**
+   - View the lecture on implementing plugins [Instructor Video: Plugins Lecture](https://youtu.be/c2PmjazGW2w). Learn to refactor your program to automatically load plugins, facilitating easy command additions without manual updates.
 
-1. [Python Loop Performance - Really Interesting and Important to Understand](https://www.youtube.com/watch?v=Qgevy75co8c)
-2. [Habits of The Good Programmer - Why we are programming the way we are with Design Patterns](https://www.youtube.com/watch?v=q1qKv5TBaOA&t=2s)
-3. [Inventor of Python Talking about the Global Interpreter Lock and multicore issues with Python](https://www.youtube.com/watch?v=m4zDBk0zAUY)
-4. [Design Patterns Explained - Level up your programming Game](https://www.youtube.com/watch?v=tv-_1er1mWI)
+5. **(Bonus) Explore Multiprocessing Capabilities:**
+   - Investigate adding multiprocessing features to enable commands/plugins to run on separate cores. This enhancement is a forward-looking feature that prepares your application for future scalability and performance improvements.
 
-Content
+## Recommended Viewing
 
-###  Read, Evaluate, Print, Loop (REPL) (main Branch) - Keeping an app running 
-*  The Command object oriented design pattern - Making your app do more than one thing.
+To complement the project work, the following videos are highly recommended:
 
-### Command Assignment Readings
-* https://refactoring.guru/design-patterns/command
+1. [Python Loop Performance](https://www.youtube.com/watch?v=Qgevy75co8c) - Insights into loop efficiency.
+2. [Habits of The Good Programmer](https://www.youtube.com/watch?v=q1qKv5TBaOA&t=2s) - Design patterns and best practices.
+3. [Global Interpreter Lock and Multicore Issues in Python](https://www.youtube.com/watch?v=m4zDBk0zAUY) - Python concurrency explained by its inventor.
+4. [Design Patterns Explained](https://www.youtube.com/watch?v=tv-_1er1mWI) - General programming design patterns.
+5. [5 Patterns in Python](https://www.youtube.com/watch?v=YMAwgRwjEOQ) - Applying patterns in Python.
 
-### Command Pattern Lecture (Command Branch) - Instructor Required - [here](https://youtu.be/3DVUN091T5g)
+## Project Setup
 
-* Knowing when to use If statements and Exceptions by following Easier to ask for forgiveness than permission(EAFP), or Look Before You Leap LBYL.
+1. Clone the repository.
+2. CD into the project folder.
+3. Create and activate the virtual environment (VE).
+4. Install the required libraries.
 
-* Adding Plugins with Using ChatGPT - Gets rid of the manual loading of commands
+## Testing Commands
 
-### Plugins Lecture (Plugins Branch) - Instructor Required - [here](https://youtu.be/c2PmjazGW2w)
+- Run all tests with `pytest`.
+- To test a specific file, use `pytest tests/test_main.py`.
+- For linting and coverage, `pytest --pylint --cov` commands can be used separately.
 
-## Setup Instructions
-1. Clone the repo
-2. CD into the project folder
-3. Create the virtual environment 
-4. Activate the virtual environment (VE)
-5. Install Requirements
+## Installed Libraries
 
-## Test Commands
-1. pytest run all tests
-2. pytest tests/test_main.py <- Run just the tests in this file
-3. pytest --pylint --cov <- Run Pylint and Coverage (Can be run independently)
-
-## Current Libraries Installed
-1. [Pytest - Testing Framework](https://docs.pytest.org/en/8.0.x/)
-2. [Faker - Fake Data Creation](https://faker.readthedocs.io/en/master/)
+1. [Pytest](https://docs.pytest.org/en/8.0.x/)
+2. [Faker](https://faker.readthedocs.io/en/master/)
 3. [Pytest Coverage](https://pytest-cov.readthedocs.io/en/latest/readme.html)
 4. [Pytest Pylint](https://pylint.readthedocs.io/en/stable/development_guide/contributor_guide/tests/launching_test.html)
-## Adding Library
-1.  Make sure you are in the correct VE, if not sure run "deactivate"
-2.  Activate the VE
-3.  Run pip freeze > requirements.txt
+
+## Adding a Library
+
+1. Ensure you're in the correct VE; if unsure, run "deactivate".
+2. Activate the VE.
+3. Update the requirements file with `pip freeze > requirements.txt`.
+
+## Grading Rubric (Total: 100 Points)
+
+- **Testing (50 Points):**
+  - Comprehensive test coverage near 100% average coverage: 50 Points
+
+- **Functionality (50 Points):**
+  - Implementation of command pattern and REPL: 10 Points
+  - Interactive calculator commands (add, subtract, multiply, divide): 20 Points
+  - Successful plugin architecture integration for dynamic command loading: 20 
+Ensure that the functionality aligns with the requirements and demonstrates the effective use of the command pattern and plugin architecture as outlined in the instructor videos.
