@@ -18,6 +18,8 @@ class App:
         self.command_handler.register_command("exit", ExitCommand())
         self.command_handler.register_command("menu", MenuCommand())
         self.command_handler.register_command("discord", DiscordCommand())
+        self.command_handler.register_command("calendar", CalendarCommand())
+
 
         print("Type 'exit' to exit.")
         while True:  #REPL Read, Evaluate, Print, Loop
