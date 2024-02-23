@@ -1,6 +1,11 @@
 # main.py
 from app import App    
 
-# You must put this in your main.py because this forces the program to start when you run it from the command line.
+def main():
+    print("Hello! Enter 'Menu' to see the command menu.")
+    app = App()
+    app.start()
+
+# This is the entry point of the Python script.
 if __name__ == "__main__":
-    app = App().start()  # Instantiate an instance of App
+    main()
