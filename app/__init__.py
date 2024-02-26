@@ -1,12 +1,24 @@
+import os
 import pkgutil
 import importlib
 from app.commands import CommandHandler
 from app.commands import Command
+from dotenv import load_dotenv
 
 class App:
     def __init__(self): # Constructor
+        load_dotenv()
+        self.settings = {}  # Initialize settings as an empty dictionary
+        # Load all environment variables into settings
+        for key, value in os.environ.items():
+            self.settings[key] = value
+        # Default to 'PRODUCTION' if 'ENVIRONMENT' not set
+        self.settings.setdefault('ENVIRONMENT', 'TESTING')        
         self.command_handler = CommandHandler()
 
+    def getEnvironmentVariable(self, envvar: str = 'ENVIRONMENT'):
+        return self.settings[envvar]
+    
     def load_plugins(self):
         # Dynamically load all plugins in the plugins directory
         plugins_package = 'app.plugins'

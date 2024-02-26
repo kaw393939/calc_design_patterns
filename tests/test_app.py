@@ -1,5 +1,14 @@
 import pytest
+
 from app import App
+
+def test_app_get_environment_variable():
+    app = App()
+    assert app.getEnvironmentVariable('ENVIRONMENT') == 'DEVELOPMENT'
+    assert app.getEnvironmentVariable('DB_USERNAME') == 'KEITH'
+    assert app.getEnvironmentVariable('DB_PASSWORD') == 'PROFESSOR'
+
+
 
 def test_app_start_exit_command(capfd, monkeypatch):
     """Test that the REPL exits correctly on 'exit' command."""
@@ -9,10 +18,6 @@ def test_app_start_exit_command(capfd, monkeypatch):
     with pytest.raises(SystemExit) as e:
         app.start()
     assert e.type == SystemExit
-
-
-
-import pytest
 
 def test_app_start_unknown_command(capfd, monkeypatch):
     """Test how the REPL handles an unknown command before exiting."""
