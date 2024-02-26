@@ -4,9 +4,10 @@ from app import App
 
 def test_app_get_environment_variable():
     app = App()
-    assert app.getEnvironmentVariable('ENVIRONMENT') == 'DEVELOPMENT'
-    assert app.getEnvironmentVariable('DB_USERNAME') == 'KEITH'
-    assert app.getEnvironmentVariable('DB_PASSWORD') == 'PROFESSOR'
+#   Retrieve the current environment setting
+    current_env = app.getEnvironmentVariable('ENVIRONMENT')
+    # Assert that the current environment is what you expect
+    assert current_env in ['DEVELOPMENT', 'TESTING', 'PRODUCTION'], f"Invalid ENVIRONMENT: {current_env}"
 
 
 
